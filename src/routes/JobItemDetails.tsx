@@ -3,11 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { fetchJobs } from "../utils/http";
 
-
 import Header from "../components/UI/Header";
 // import JobItem from "../components/JobItem";
 import CompanyHeader from "../components/CompanyHeader";
 import JobItemDescription from "../components/JobItemDescription";
+import ApplyNowFooter from "../components/UI/ApplyNowFooter";
+import App from "../App";
 
 function JobItemDetails() {
 	const params = useParams();
@@ -18,6 +19,7 @@ function JobItemDetails() {
 	});
 
 	let content;
+	let footer;
 
 	if (isPending) {
 		content = <p>Loading...</p>;
@@ -66,15 +68,25 @@ function JobItemDetails() {
 				/>
 			</>
 		));
+
+		footer = filteredData.map((item) => (
+			<ApplyNowFooter
+				apply={item.apply}
+				position={item.position}
+				company={item.position}
+			/>
+		));
 	}
 
 	return (
-		<div>
+		<div className="bg-c-light-grey">
 			<Header />
-			<p>JobItemDetails</p>
-			<p>{params.jobID}</p>
-			{content}
-			<Link to="/">BACK</Link>
+			<section className="px-8 py-8">
+				{/* <p>{params.jobID}</p> */}
+				{content}
+				{/* <Link to="/">BACK</Link> */}
+			</section>
+			{footer}
 		</div>
 	);
 }

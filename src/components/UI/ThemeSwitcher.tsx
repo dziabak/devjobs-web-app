@@ -1,9 +1,12 @@
 function ThemeSwitcher() {
 	return (
-		<div className="bg-[url('../../assets/mobile/bg-pattern-header.svg')] bg-cover">
-			<img src="../../assets/desktop/logo.svg" alt="" />
+		<div className="flex items-center space-x-2">
 			<img src="../../assets/desktop/icon-sun.svg" alt="" />
-			<input type="checkbox" className="toggle" defaultChecked />
+			<input
+				type="checkbox"
+				className="toggle toggle-neutral toggle-sm"
+				defaultChecked
+			/>
 			<img src="../../assets/desktop/icon-moon.svg" alt="" />
 		</div>
 	);

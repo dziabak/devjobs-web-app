@@ -35,6 +35,8 @@ function CurrentJobs() {
 			<JobItem
 				key={item.id}
 				id={item.id}
+				logo={item.logo}
+				logoBackground={item.logoBackground}
 				company={item.company}
 				position={item.position}
 				postedAt={item.postedAt}
@@ -46,8 +48,7 @@ function CurrentJobs() {
 
 	return (
 		<div>
-			<p>Current Jobs:</p>
-			{content}
+			<div className="grid grid-cols-1 gap-8 pt-8 gap-y-16 md:grid-cols-2 lg:grid-cols-4">{content}</div>
 		</div>
 	);
 }
