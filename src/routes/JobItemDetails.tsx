@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { useQuery } from "@tanstack/react-query";
 import { fetchJobs } from "../utils/http";
@@ -8,7 +8,6 @@ import Header from "../components/UI/Header";
 import CompanyHeader from "../components/CompanyHeader";
 import JobItemDescription from "../components/JobItemDescription";
 import ApplyNowFooter from "../components/UI/ApplyNowFooter";
-import App from "../App";
 
 function JobItemDetails() {
 	const params = useParams();
@@ -73,7 +72,7 @@ function JobItemDetails() {
 			<ApplyNowFooter
 				apply={item.apply}
 				position={item.position}
-				company={item.position}
+				company={item.company}
 			/>
 		));
 	}
