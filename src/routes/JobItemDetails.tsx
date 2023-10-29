@@ -17,6 +17,7 @@ function JobItemDetails() {
 		queryFn: fetchJobs,
 	});
 
+	let header;
 	let content;
 	let footer;
 
@@ -35,6 +36,16 @@ function JobItemDetails() {
 
 		// console.log(filteredData);
 
+		header = filteredData.map((item) => (
+			<CompanyHeader
+				key={item.id}
+				company={item.company}
+				logo={item.logo}
+				logoBackground={item.logoBackground}
+				website={item.website}
+			/>
+		));
+
 		content = filteredData.map((item) => (
 			// <JobItem
 			// 	key={item.id}
@@ -46,13 +57,13 @@ function JobItemDetails() {
 			// 	location={item.location}
 			// />
 			<>
-				<CompanyHeader
+				{/* <CompanyHeader
 					key={item.id}
 					company={item.company}
 					logo={item.logo}
 					logoBackground={item.logoBackground}
 					website={item.website}
-				/>
+				/> */}
 				<JobItemDescription
 					key={item.id}
 					// id={item.id}
@@ -80,11 +91,14 @@ function JobItemDetails() {
 	return (
 		<div className="bg-c-light-grey">
 			<Header />
-			<section className="px-8 py-8">
-				{/* <p>{params.jobID}</p> */}
-				{content}
-				{/* <Link to="/">BACK</Link> */}
+			<section className="relative px-8 py-8 pt-48 sm:px-0 md:pt-24">
+				{/* <div className="px-8 py-8">{header}</div> */}
+				<div className="container absolute h-0 px-8 -inset-y-6 -inset-x-1/2 sm:px-0 xl:px-32 md:-inset-y-10">
+					{header}
+				</div>
+				<div className="container">{content}</div>
 			</section>
+
 			{footer}
 		</div>
 	);

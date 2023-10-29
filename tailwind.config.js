@@ -16,6 +16,16 @@ export default {
 				"c-grey": "#9daec2",
 				"c-dark-grey": "#6e8098",
 			},
+			container: {
+				center: true,
+				padding: {
+					// DEFAULT: "1rem",
+					// sm: "4rem",
+					// lg: "8rem",
+					xl: "8rem",
+					// "2xl": "6rem",
+				},
+			},
 		},
 	},
 	// daisyui: { themes: [{ mytheme: { neutral: "#3abff8" } }] },

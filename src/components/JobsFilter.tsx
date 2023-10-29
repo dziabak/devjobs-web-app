@@ -6,10 +6,11 @@ function JobsFilter() {
 	};
 
 	return (
-		<div className="w-full p-0 rounded-md bg-c-white">
+		<div className="container">
+			<div className="w-full p-0 rounded-md bg-c-white">
 			<form onSubmit={searchSubmitHandler}>
 				<div className="flex items-center justify-between">
-					<div className="w-full p-4 md:border-r md:flex md:w-1/3 md:items-center md:px-4 lg:px-8 lg:w-1/2">
+					<div className="w-full p-4 md:border-r md:flex md:w-1/3 md:items-center md:px-4 lg:px-8 lg:w-1/3">
 						<svg
 							width="24"
 							height="24"
@@ -28,7 +29,7 @@ function JobsFilter() {
 						/>
 					</div>
 
-					<div className="hidden md:p-4 md:flex md:w-1/3 md:items-center md:px-4 lg:w-1/4 md:border-r lg:px-6">
+					<div className="hidden md:p-4 md:flex md:w-1/3 md:items-center md:px-4 lg:w-1/3 md:border-r lg:px-6">
 						<svg
 							width="17"
 							height="24"
@@ -47,14 +48,14 @@ function JobsFilter() {
 						/>
 					</div>
 
-					<div className="flex justify-between p-4 md:w-1/3 md:items-center md:px-4 lg:w-1/4 md:border-r lg:px-6 lg:pr-4">
+					<div className="flex justify-between p-4 md:w-1/3 md:items-center md:px-4 lg:w-1/3 lg:px-6 lg:pr-4">
 						<div className="hidden form-control md:block">
 							<label className="cursor-pointer label">
 								<input type="checkbox" className="checkbox" />
-								<span className="ml-2 text-base font-bold label-text xl:hidden">
+								<span className="ml-2 text-base font-bold label-text lg:hidden">
 									Full Time
 								</span>
-								<span className="hidden ml-2 text-base font-bold label-text xl:block">
+								<span className="hidden ml-2 text-base font-bold label-text lg:block">
 									Full Time Only
 								</span>
 							</label>
@@ -68,7 +69,7 @@ function JobsFilter() {
 								/>
 							</svg>
 						</button>
-						<button className="p-3 bg-indigo-500 rounded-md xl:px-12">
+						<button className="p-3 bg-indigo-500 rounded-md lg:px-12">
 							<svg
 								width="24"
 								height="24"
@@ -87,6 +88,7 @@ function JobsFilter() {
 					</div>
 				</div>
 			</form>
+		</div>
 		</div>
 	);
 }
