@@ -22,7 +22,7 @@ export default {
 					// DEFAULT: "1rem",
 					// sm: "4rem",
 					// lg: "8rem",
-					xl: "8rem",
+					xl: "16rem",
 					// "2xl": "6rem",
 				},
 			},
@@ -30,4 +30,5 @@ export default {
 	},
 	// daisyui: { themes: [{ mytheme: { neutral: "#3abff8" } }] },
 	plugins: [require("daisyui")],
+	darkMode: "class",
 };

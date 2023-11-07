@@ -1,29 +1,32 @@
+import { useState } from "react";
+
 import { useQuery } from "@tanstack/react-query";
 
 import { fetchJobs } from "../utils/http";
 
 import JobItem from "./JobItem";
 
-// type JobProps = {
-// 	id: string;
-// 	company: string;
-// 	position: string;
-// 	postedAt: string;
-// 	contract: string;
-// 	location: string;
-// 	other?: string;
-// }[];
+import LoadingSpinner from "./UI/LoadingSpinner";
 
 function CurrentJobs() {
+	const itemsPerPage = 9;
+	const [totalDisplayedItems, setTotalDisplayedItems] = useState(itemsPerPage);
+
+	const loadMoreData = () => {
+		setTotalDisplayedItems(totalDisplayedItems + itemsPerPage);
+	};
+
 	const { data, isPending, isError } = useQuery({
 		queryKey: ["jobs"],
 		queryFn: fetchJobs,
 	});
 
+	let loadingContent;
 	let content;
+	let loadMoreContent;
 
 	if (isPending) {
-		content = <p>Loading...</p>;
+		loadingContent = <LoadingSpinner />;
 	}
 
 	if (isError) {
@@ -31,7 +34,9 @@ function CurrentJobs() {
 	}
 
 	if (data) {
-		content = data.map((item) => (
+		const slicedData = data.slice(0, totalDisplayedItems);
+
+		content = slicedData.map((item) => (
 			<JobItem
 				key={item.id}
 				id={item.id}
@@ -44,11 +49,31 @@ function CurrentJobs() {
 				location={item.location}
 			/>
 		));
+
+		if (totalDisplayedItems > data.length) {
+			loadMoreContent = (
+				<p className="font-bold text-center text-c-violet">
+					No more offers to load!
+				</p>
+			);
+		} else {
+			loadMoreContent = (
+				<button
+					className="px-16 py-3 font-bold text-center transition-colors rounded-md text-c-white bg-c-violet hover:bg-c-light-violet"
+					onClick={loadMoreData}>
+					Load More
+				</button>
+			);
+		}
 	}
 
 	return (
 		<div>
-			<div className="container grid grid-cols-1 gap-8 pt-24 gap-y-16 md:grid-cols-2 lg:grid-cols-3">{content}</div>
+			{loadingContent}
+			<div className="container grid grid-cols-1 gap-8 pt-24 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+				{content}
+			</div>
+			<div className="flex justify-center mt-12">{loadMoreContent}</div>
 		</div>
 	);
 }
