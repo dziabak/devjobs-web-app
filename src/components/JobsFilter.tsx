@@ -1,16 +1,27 @@
-import { FormEvent, useRef } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { useNavigate, createSearchParams } from "react-router-dom";
+import JobsFilterModal from "./JobsFilterModal";
 
 function JobsFilter() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
 	const positionSearchElement = useRef("");
 	const locationSearchElement = useRef("");
 	const contractSearchElement = useRef(false);
 
 	const navigate = useNavigate();
-	// const params = { title: `${searchElement.current.value}` };
+
+	const openModal = () => {
+		setIsModalOpen(true);
+	};
+
+	const closeModal = () => {
+		setIsModalOpen(false);
+	};
 
 	const searchSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		closeModal();
 		navigate(
 			{
 				pathname: "/jobs/search",
@@ -25,7 +36,7 @@ function JobsFilter() {
 	};
 
 	return (
-		<div className="container">
+		<div className="container font-main">
 			<div className="w-full p-0 rounded-md bg-c-white dark:bg-c-very-dark-blue">
 				<form onSubmit={searchSubmitHandler}>
 					<div className="flex items-center justify-between">
@@ -44,7 +55,7 @@ function JobsFilter() {
 							<input
 								type="text"
 								placeholder="Filter by title..."
-								className="w-full h-12 pl-2 rounded-md dark:bg-c-very-dark-blue"
+								className="w-full h-12 pl-2 rounded-md dark:bg-c-very-dark-blue dark:text-c-white"
 								ref={positionSearchElement}
 							/>
 						</div>
@@ -64,28 +75,30 @@ function JobsFilter() {
 							<input
 								type="text"
 								placeholder="Filter by location..."
-								className="w-full h-12 pl-2 rounded-md dark:bg-c-very-dark-blue"
+								className="w-full h-12 pl-2 rounded-md dark:bg-c-very-dark-blue dark:text-c-white"
 								ref={locationSearchElement}
 							/>
 						</div>
 
 						<div className="flex justify-between p-4 md:w-1/3 md:items-center md:px-4 lg:w-1/3 lg:px-6 lg:pr-4">
-							<div className="hidden form-control md:block">
-								<label className="cursor-pointer label">
-									<input
-										type="checkbox"
-										className="checkbox"
-										ref={contractSearchElement}
-									/>
-									<span className="ml-2 text-base font-bold label-text 2xl:hidden dark:text-white">
-										Full Time
-									</span>
-									<span className="hidden ml-2 text-base font-bold label-text 2xl:block dark:text-white">
-										Full Time Only
-									</span>
+							<div className="hidden md:flex md:flex-row">
+								<input
+									type="checkbox"
+									id="contract"
+									className="w-6 rounded cursor-pointer accent-c-violet dark:bg-c-grey"
+									ref={contractSearchElement}
+								/>
+								<label
+									htmlFor="contract"
+									className="hidden ml-2 text-base font-bold cursor-pointer md:block dark:text-white">
+									Full Time
 								</label>
 							</div>
-							<button className="p-3 rounded-md md:hidden">
+
+							<button
+								className="p-3 rounded-md md:hidden"
+								type="button"
+								onClick={openModal}>
 								<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg">
 									<path
 										d="M19.108 0H.86a.86.86 0 00-.764.455.833.833 0 00.068.884l6.685 9.202.007.01c.242.32.374.708.375 1.107v7.502a.825.825 0 00.248.594.865.865 0 00.942.18l3.756-1.4c.337-.1.56-.41.56-.784v-6.092c0-.399.132-.787.375-1.108l.007-.009 6.685-9.202c.19-.26.217-.6.068-.884A.86.86 0 0019.108 0z"
@@ -95,6 +108,7 @@ function JobsFilter() {
 									/>
 								</svg>
 							</button>
+
 							<button className="p-3 transition-colors rounded-md bg-c-violet lg:px-12 hover:bg-c-light-violet">
 								<svg
 									width="24"
@@ -113,6 +127,12 @@ function JobsFilter() {
 							</button>
 						</div>
 					</div>
+					<JobsFilterModal
+						openModal={isModalOpen}
+						closeModal={closeModal}
+						locationSearchElement={locationSearchElement}
+						contractSearchElement={contractSearchElement}
+					/>
 				</form>
 			</div>
 		</div>

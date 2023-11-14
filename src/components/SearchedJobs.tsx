@@ -19,6 +19,7 @@ const SearchedJobs = () => {
 	});
 
 	let content;
+	let searchContent;
 
 	if (isPending) {
 		content = <p>Loading...</p>;
@@ -46,8 +47,7 @@ const SearchedJobs = () => {
 					(keyword) =>
 						lowerPosition.includes(keyword) || lowerCompany.includes(keyword)
 				) &&
-				lowerLocation.includes(location.toLowerCase()) 
-				&&
+				lowerLocation.includes(location.toLowerCase()) &&
 				(full === "true" ? item.contract === "Full Time" : item.contract !== "")
 			);
 		});
@@ -65,13 +65,22 @@ const SearchedJobs = () => {
 				location={item.location}
 			/>
 		));
+
+		if (filteredData.length < 1) {
+			searchContent = (
+				<p className="font-bold text-center text-c-violet">
+					There are no offers which match your search criteria right now.
+				</p>
+			);
+		}
 	}
 
 	return (
-		<div>
+		<div className="min-h-screen">
 			<div className="container grid grid-cols-1 gap-8 pt-24 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
 				{content}
 			</div>
+			<div className="flex justify-center mt-12">{searchContent}</div>
 		</div>
 	);
 };

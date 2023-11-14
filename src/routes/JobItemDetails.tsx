@@ -62,6 +62,7 @@ function JobItemDetails() {
 
 		footer = data.map((item) => (
 			<ApplyNowFooter
+				key={item.id}
 				apply={item.apply}
 				position={item.position}
 				company={item.company}

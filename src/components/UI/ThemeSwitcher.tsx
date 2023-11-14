@@ -32,7 +32,7 @@ function ThemeSwitcher() {
 
 	return (
 		<div className="flex items-center justify-center">
-			<label htmlFor="themeSwitcher" className="cursor-pointer p-2 px-3">
+			<label htmlFor="themeSwitcher" className="p-2 px-3 cursor-pointer">
 				<img
 					src="../../assets/desktop/icon-sun.svg"
 					alt=""
@@ -42,12 +42,12 @@ function ThemeSwitcher() {
 			<input
 				type="checkbox"
 				id="themeSwitcher"
-				className="toggle toggle-neutral toggle-sm bg-c-violet border-transparent md:toggle-md"
+				className="border-transparent toggle toggle-neutral toggle-sm bg-c-violet md:toggle-md"
 				onChange={toggleTheme}
 				checked={isDarkMode}
 			/>
 
-			<label htmlFor="themeSwitcher" className="cursor-pointer p-2 px-3">
+			<label htmlFor="themeSwitcher" className="p-2 px-3 cursor-pointer">
 				<img
 					src="../../assets/desktop/icon-moon.svg"
 					alt=""

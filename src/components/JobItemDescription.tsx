@@ -49,7 +49,7 @@ function JobItemDescription({
 				</a>
 			</div>
 
-			<div className="text-c-dark-grey">
+			<div className="text-c-dark-grey dark:text-c-grey">
 				<p>{description}</p>
 				<p className="my-8 text-xl font-bold text-black dark:text-c-white">Requirements</p>
 				<p className="mb-8">{requirements.content}</p>

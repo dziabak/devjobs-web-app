@@ -25,7 +25,7 @@ function JobItem({
 	logoBackground,
 }: JobItemProps) {
 	const combinedString = combineStrings(position, company);
-	console.log(combinedString);
+	
 	return (
 		<Link to={`/jobs/${combinedString}`} reloadDocument>
 			<div className="group relative w-full h-[220px] p-8 pt-12 bg-c-white font-main rounded-lg dark:bg-c-very-dark-blue">
