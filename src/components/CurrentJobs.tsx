@@ -68,7 +68,7 @@ function CurrentJobs() {
 	}
 
 	return (
-		<div>
+		<div className="min-h-screen">
 			{loadingContent}
 			<div className="container grid grid-cols-1 gap-8 pt-24 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
 				{content}
