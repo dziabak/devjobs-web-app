@@ -1,15 +1,31 @@
 import { FormEvent, useRef, useState } from "react";
 import { useNavigate, createSearchParams } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 import JobsFilterModal from "./JobsFilterModal";
 
 function JobsFilter() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
 	const positionSearchElement = useRef("");
-	const locationSearchElement = useRef("");
-	const contractSearchElement = useRef(false);
+	const desktopLocationSearchElement = useRef("");
+	const desktopContractSearchElement = useRef(false);
+	const mobileLocationSearchElement = useRef("");
+	const mobileContractSearchElement = useRef(false);
+
+	let locationSearchElement;
+	let contractSearchElement;
 
 	const navigate = useNavigate();
+
+	const isMobile = useMediaQuery({ query: "(max-width:768px)" });
+
+	if (isMobile) {
+		locationSearchElement = mobileLocationSearchElement;
+		contractSearchElement = mobileContractSearchElement;
+	} else {
+		locationSearchElement = desktopLocationSearchElement;
+		contractSearchElement = desktopContractSearchElement;
+	}
 
 	const openModal = () => {
 		setIsModalOpen(true);
@@ -80,13 +96,12 @@ function JobsFilter() {
 							/>
 						</div>
 
-						<div className="flex justify-between p-4 md:w-1/3 md:items-center md:px-4 lg:w-1/3 lg:px-6 lg:pr-4">
-							<div className="hidden md:flex md:flex-row">
+						<div className="flex justify-between p-4 md:w-1/3 md:px-4 lg:w-1/3 lg:px-6 lg:pr-4">
+							<div className="hidden md:flex md:flex-row md:items-center">
 								<input
+									className="relative float-left h-6 w-6 appearance-none rounded border-[0.125rem] border-solid border-neutral-200 bg-neutral-200 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-c-violet checked:bg-c-violet checked:before:opacity-[0.16] checked:after:absolute checked:after:mt-[0.05rem] checked:after:ml-[0.45rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer     dark:border-gray-700 dark:bg-gray-700 dark:checked:border-c-violet dark:checked:bg-c-violet accent-c-violet"
 									type="checkbox"
 									id="contract"
-									className="w-6 rounded cursor-pointer accent-c-violet dark:bg-c-grey"
-									ref={contractSearchElement}
 								/>
 								<label
 									htmlFor="contract"
@@ -127,12 +142,14 @@ function JobsFilter() {
 							</button>
 						</div>
 					</div>
-					<JobsFilterModal
-						openModal={isModalOpen}
-						closeModal={closeModal}
-						locationSearchElement={locationSearchElement}
-						contractSearchElement={contractSearchElement}
-					/>
+					{isMobile && (
+						<JobsFilterModal
+							openModal={isModalOpen}
+							closeModal={closeModal}
+							locationSearchElement={locationSearchElement}
+							contractSearchElement={contractSearchElement}
+						/>
+					)}
 				</form>
 			</div>
 		</div>

@@ -11,7 +11,7 @@ import RootLayout from "./routes/RootLayout";
 
 const router = createBrowserRouter([
 	{
-		path: "/jobs",
+		path: "/",
 		element: <RootLayout />,
 		children: [
 			{

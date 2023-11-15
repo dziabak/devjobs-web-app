@@ -60,7 +60,7 @@ const JobsFilterModal = ({
 						<input
 							type="checkbox"
 							id="contract-modal"
-							className="w-6 rounded cursor-pointer accent-c-violet dark:bg-c-grey"
+							className="relative float-left h-6 w-6 appearance-none rounded border-[0.125rem] border-solid border-neutral-200 bg-neutral-200 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] checked:border-c-violet checked:bg-c-violet checked:before:opacity-[0.16] checked:after:absolute checked:after:mt-[0.05rem] checked:after:ml-[0.45rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer dark:border-gray-700 dark:bg-gray-700 dark:checked:border-c-violet dark:checked:bg-c-violet accent-c-violet"
 							ref={contractSearchElement}
 						/>
 						<label
