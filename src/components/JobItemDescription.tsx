@@ -1,4 +1,5 @@
 import useTitle from "../hooks/use-title";
+import { useDocumentTitle } from "usehooks-ts";
 
 type JobItemDescriptionProps = {
 	id?: string;
@@ -25,7 +26,8 @@ function JobItemDescription({
 	requirements,
 	role,
 }: JobItemDescriptionProps) {
-	useTitle(position + " at " + company);
+	// useTitle(position + " at " + company);
+	useDocumentTitle(position + " at " + company);
 
 	return (
 		<div className="p-8 my-8 rounded-md bg-c-white dark:bg-c-very-dark-blue">
@@ -51,7 +53,9 @@ function JobItemDescription({
 
 			<div className="text-c-dark-grey dark:text-c-grey">
 				<p>{description}</p>
-				<p className="my-8 text-xl font-bold text-black dark:text-c-white">Requirements</p>
+				<p className="my-8 text-xl font-bold text-black dark:text-c-white">
+					Requirements
+				</p>
 				<p className="mb-8">{requirements.content}</p>
 				<ul className="space-y-4 list-disc list-inside">
 					{requirements.items.map((item) => (
@@ -60,7 +64,9 @@ function JobItemDescription({
 						</li>
 					))}
 				</ul>
-				<p className="my-8 text-xl font-bold text-black dark:text-c-white">What You Will Do</p>
+				<p className="my-8 text-xl font-bold text-black dark:text-c-white">
+					What You Will Do
+				</p>
 				<p className="mb-8">{role.content}</p>
 				<ul className="space-y-4 list-decimal list-inside">
 					{role.items.map((item) => (
