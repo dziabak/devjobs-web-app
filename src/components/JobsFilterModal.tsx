@@ -1,12 +1,19 @@
 import { useEffect, useRef } from "react";
 
+type JobsFilterModalProps = {
+	openModal: boolean;
+	closeModal: () => void;
+	locationSearchElement: React.RefObject<HTMLInputElement>;
+	contractSearchElement: React.RefObject<HTMLInputElement>;
+};
+
 const JobsFilterModal = ({
 	openModal,
 	closeModal,
 	locationSearchElement,
 	contractSearchElement,
-}) => {
-	const modalRef = useRef();
+}: JobsFilterModalProps) => {
+	const modalRef = useRef<HTMLDialogElement>(null);
 
 	useEffect(() => {
 		if (openModal) {
@@ -23,10 +30,10 @@ const JobsFilterModal = ({
 			onClick={(e) => {
 				const dialogDimensions = modalRef.current?.getBoundingClientRect();
 				if (
-					e.clientX < dialogDimensions.left ||
-					e.clientX > dialogDimensions.right ||
-					e.clientY < dialogDimensions.top ||
-					e.clientY > dialogDimensions.bottom
+					e.clientX < dialogDimensions!.left ||
+					e.clientX > dialogDimensions!.right ||
+					e.clientY < dialogDimensions!.top ||
+					e.clientY > dialogDimensions!.bottom
 				) {
 					closeModal();
 				}

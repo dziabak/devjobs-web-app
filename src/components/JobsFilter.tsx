@@ -6,14 +6,14 @@ import JobsFilterModal from "./JobsFilterModal";
 function JobsFilter() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const positionSearchElement = useRef("");
-	const desktopLocationSearchElement = useRef("");
-	const desktopContractSearchElement = useRef(false);
-	const mobileLocationSearchElement = useRef("");
-	const mobileContractSearchElement = useRef(false);
+	const positionSearchElement = useRef<HTMLInputElement>(null);
+	const desktopLocationSearchElement = useRef<HTMLInputElement>(null);
+	const desktopContractSearchElement = useRef<HTMLInputElement>(null);
+	const mobileLocationSearchElement = useRef<HTMLInputElement>(null);
+	const mobileContractSearchElement = useRef<HTMLInputElement>(null);
 
-	let locationSearchElement;
-	let contractSearchElement;
+	let locationSearchElement: React.RefObject<HTMLInputElement>;
+	let contractSearchElement: React.RefObject<HTMLInputElement>;
 
 	const navigate = useNavigate();
 
@@ -35,16 +35,16 @@ function JobsFilter() {
 		setIsModalOpen(false);
 	};
 
-	const searchSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
+	const searchSubmitHandler = (e: FormEvent) => {
 		e.preventDefault();
 		closeModal();
 		navigate(
 			{
 				pathname: "/jobs/search",
 				search: `?${createSearchParams({
-					position: `${positionSearchElement.current.value}`,
-					location: `${locationSearchElement.current.value}`,
-					full: `${contractSearchElement.current.checked}`,
+					position: `${positionSearchElement.current?.value}`,
+					location: `${locationSearchElement.current?.value}`,
+					full: `${contractSearchElement.current?.checked}`,
 				})}`,
 			},
 			{ replace: false }
