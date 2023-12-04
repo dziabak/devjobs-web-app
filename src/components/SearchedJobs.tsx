@@ -4,9 +4,11 @@ import { fetchJobs } from "../utils/http";
 import JobItem from "./JobItem";
 
 import { useSearchParams } from "react-router-dom";
+import LoadingSpinner from "./UI/LoadingSpinner";
+import ErrorBlock from "./UI/ErrorBlock";
 
 const SearchedJobs = () => {
-	const [searchParams, setSearchParams] = useSearchParams();
+	const [searchParams, _setSearchParams] = useSearchParams();
 	const position = searchParams.get("position");
 	const location = searchParams.get("location");
 	const full = searchParams.get("full");
@@ -18,36 +20,34 @@ const SearchedJobs = () => {
 		queryFn: fetchJobs,
 	});
 
-	let content;
-	let searchContent;
+	let content!: JSX.Element | JSX.Element[];
+	let searchContent!: JSX.Element;
 
 	if (isPending) {
-		content = <p>Loading...</p>;
+		content = <LoadingSpinner />;
 	}
 
 	if (isError) {
-		content = <p>Error!</p>;
+		content = (
+			<ErrorBlock
+				errorHeader="We are sorry :("
+				errorMessage="Could not fetch data from the server. Please try again later."
+			/>
+		);
 	}
 
 	if (data) {
 		const filteredData = data.filter((item) => {
-			// return (
-			// 	(item.position.toLowerCase().includes(position.toLowerCase()) ||
-			// 		item.company.toLowerCase().includes(position.toLowerCase())) &&
-			// 	item.location.toLowerCase().includes(location.toLowerCase())
-
-			// );
-
 			const lowerPosition = item.position.toLowerCase();
 			const lowerCompany = item.company.toLowerCase();
 			const lowerLocation = item.location.toLowerCase();
 
 			return (
-				positionKeywords.some(
+				positionKeywords!.some(
 					(keyword) =>
 						lowerPosition.includes(keyword) || lowerCompany.includes(keyword)
 				) &&
-				lowerLocation.includes(location.toLowerCase()) &&
+				lowerLocation.includes(location!.toLowerCase()) &&
 				(full === "true" ? item.contract === "Full Time" : item.contract !== "")
 			);
 		});
@@ -68,9 +68,10 @@ const SearchedJobs = () => {
 
 		if (filteredData.length < 1) {
 			searchContent = (
-				<p className="font-bold text-center text-c-violet">
-					There are no offers which match your search criteria right now.
-				</p>
+				<ErrorBlock
+					errorHeader="Oh no :("
+					errorMessage="There are no offers which match your search criteria right now."
+				/>
 			);
 		}
 	}
