@@ -18,7 +18,11 @@ export async function fetchJobs(): Promise<JobsProps> {
 	return jobs;
 }
 
-export async function fetchJobItem({ id }: { id: string }): Promise<JobsProps> {
+export async function fetchJobItem({
+	id,
+}: {
+	id: string | undefined;
+}): Promise<JobsProps> {
 	const response = await fetch("../../data.json");
 
 	if (!response.ok) {

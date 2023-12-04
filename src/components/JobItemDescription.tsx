@@ -1,20 +1,8 @@
 import { useDocumentTitle } from "usehooks-ts";
 
-type JobItemDescriptionProps = {
-	id?: string;
-	position: string;
-	company: string;
-	postedAt: string;
-	contract: string;
-	location: string;
-	apply: string;
-	description: string;
-	requirements: { content: string; items: string[] };
-	role: { content: string; items: string[] };
-};
+import { JobItemDescriptionProps } from "../types/types";
 
 function JobItemDescription({
-	// id,
 	position,
 	company,
 	postedAt,
@@ -25,7 +13,6 @@ function JobItemDescription({
 	requirements,
 	role,
 }: JobItemDescriptionProps) {
-	// useTitle(position + " at " + company);
 	useDocumentTitle(position + " at " + company);
 
 	return (
@@ -73,9 +60,6 @@ function JobItemDescription({
 							{item}
 						</li>
 					))}
-					{/* {role.items.map((item) => (
-						<li key={item} className="marker:text-c-violet marker:font-bold"><span>{role.items.indexOf(item) + 1}</span>{item}</li>
-					))} */}
 				</ul>
 			</div>
 		</div>

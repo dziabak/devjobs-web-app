@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 function ThemeSwitcher() {
-	// const [isChecked, setIsChecked] = useState(false);
 	const [isDarkMode, setIsDarkMode] = useState(false);
 
 	useEffect(() => {

@@ -11,26 +11,32 @@ import ApplyNowFooter from "../components/UI/ApplyNowFooter";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 
 import { fetchJobItem } from "../utils/http";
+import ErrorBlock from "../components/UI/ErrorBlock";
 
 function JobItemDetails() {
 	const params = useParams();
 
-	const { data, isPending, isError, error } = useQuery({
+	const { data, isPending, isError } = useQuery({
 		queryKey: ["jobs", params.jobID],
-		queryFn: ({ signal }) => fetchJobItem({ id: params.jobID, signal }),
+		queryFn: () => fetchJobItem({ id: params.jobID }),
 	});
 
-	let loadingContent;
-	let header;
-	let content;
-	let footer;
+	let loadingContent!: JSX.Element;
+	let header!: JSX.Element[];
+	let content!: JSX.Element | JSX.Element[];
+	let footer!: JSX.Element[];
 
 	if (isPending) {
 		loadingContent = <LoadingSpinner />;
 	}
 
 	if (isError) {
-		content = <p>{error.message}</p>;
+		content = (
+			<ErrorBlock
+				errorHeader="We are sorry :("
+				errorMessage="Could not fetch data from the server. Please try again later."
+			/>
+		);
 	}
 
 	if (data) {
@@ -47,7 +53,6 @@ function JobItemDetails() {
 		content = data.map((item) => (
 			<JobItemDescription
 				key={item.id}
-				// id={item.id}
 				position={item.position}
 				company={item.company}
 				postedAt={item.postedAt}
@@ -80,7 +85,6 @@ function JobItemDetails() {
 				</div>
 				<div className="container">{content}</div>
 			</section>
-
 			{footer}
 		</div>
 	);

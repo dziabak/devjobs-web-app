@@ -1,10 +1,4 @@
-type CompanyHeaderProps = {
-	id?: string;
-	company: string;
-	logo: string;
-	logoBackground: string;
-	website: string;
-};
+import { CompanyHeaderProps } from "../types/types";
 
 function CompanyHeader({
 	company,
@@ -12,16 +6,15 @@ function CompanyHeader({
 	logoBackground,
 	website,
 }: CompanyHeaderProps) {
-	let shortURL;
-	let domain;
+	let shortURL!: string;
+	let domain: string;
 	const startIndex = website.indexOf("://") + 3;
 	const endIndex = website.indexOf("/", startIndex);
 
 	if (startIndex !== -1 && endIndex !== -1) {
 		domain = website.substring(startIndex, endIndex);
-		domain = domain.replace(/^[^.]+\./, ".")
-		shortURL = company.replace(/\s+/g, '').toLowerCase().concat(domain)
-
+		domain = domain.replace(/^[^.]+\./, ".");
+		shortURL = company.replace(/\s+/g, "").toLowerCase().concat(domain);
 	}
 
 	return (
