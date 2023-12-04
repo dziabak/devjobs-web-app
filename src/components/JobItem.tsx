@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { combineStrings } from "../utils/combine-strings";
 
 type JobItemProps = {
-	// id: number;
-	id: string;
+	id?: string;
 	company: string;
 	position: string;
 	postedAt: string;
@@ -25,9 +24,9 @@ function JobItem({
 	logoBackground,
 }: JobItemProps) {
 	const combinedString = combineStrings(position, company);
-	
+
 	return (
-		<Link to={`/jobs/${combinedString}`} reloadDocument>
+		<Link to={`/jobs/${combinedString}`} id={id} reloadDocument>
 			<div className="group relative w-full h-[220px] p-8 pt-12 bg-c-white font-main rounded-lg dark:bg-c-very-dark-blue">
 				<div
 					style={{ backgroundColor: logoBackground }}

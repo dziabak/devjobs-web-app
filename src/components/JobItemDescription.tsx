@@ -1,4 +1,3 @@
-import useTitle from "../hooks/use-title";
 import { useDocumentTitle } from "usehooks-ts";
 
 type JobItemDescriptionProps = {

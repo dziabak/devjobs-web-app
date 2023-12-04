@@ -7,6 +7,8 @@ import { fetchJobs } from "../utils/http";
 import JobItem from "./JobItem";
 
 import LoadingSpinner from "./UI/LoadingSpinner";
+import ErrorBlock from "./UI/ErrorBlock";
+import LoadMoreContent from "./UI/LoadMoreContent";
 
 function CurrentJobs() {
 	const itemsPerPage = 9;
@@ -21,16 +23,21 @@ function CurrentJobs() {
 		queryFn: fetchJobs,
 	});
 
-	let loadingContent;
-	let content;
-	let loadMoreContent;
+	let loadingContent!: JSX.Element;
+	let content!: JSX.Element | JSX.Element[];
+	let loadMoreContent!: JSX.Element;
 
 	if (isPending) {
 		loadingContent = <LoadingSpinner />;
 	}
 
 	if (isError) {
-		content = <p>Error!</p>;
+		content = (
+			<ErrorBlock
+				errorHeader="We are sorry :("
+				errorMessage="Could not fetch data from the server. Please try again later."
+			/>
+		);
 	}
 
 	if (data) {
@@ -51,18 +58,13 @@ function CurrentJobs() {
 		));
 
 		if (totalDisplayedItems > data.length) {
-			loadMoreContent = (
-				<p className="font-bold text-center text-c-violet">
-					No more offers to load!
-				</p>
-			);
+			loadMoreContent = <LoadMoreContent canLoadMoreContent={false} />;
 		} else {
 			loadMoreContent = (
-				<button
-					className="px-16 py-3 font-bold text-center transition-colors rounded-md text-c-white bg-c-violet hover:bg-c-light-violet"
-					onClick={loadMoreData}>
-					Load More
-				</button>
+				<LoadMoreContent
+					canLoadMoreContent={true}
+					onLoadMoreData={loadMoreData}
+				/>
 			);
 		}
 	}
