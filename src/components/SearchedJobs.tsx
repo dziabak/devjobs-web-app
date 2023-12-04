@@ -70,7 +70,7 @@ const SearchedJobs = () => {
 			searchContent = (
 				<ErrorBlock
 					errorHeader="Oh no :("
-					errorMessage="There are no offers which match your search criteria right now."
+					errorMessage="There are no offers matching your search criteria right now."
 				/>
 			);
 		}

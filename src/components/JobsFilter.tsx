@@ -40,7 +40,7 @@ function JobsFilter() {
 		closeModal();
 		navigate(
 			{
-				pathname: "/jobs/search",
+				pathname: "jobs/search",
 				search: `?${createSearchParams({
 					position: `${positionSearchElement.current?.value}`,
 					location: `${locationSearchElement.current?.value}`,

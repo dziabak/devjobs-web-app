@@ -15,8 +15,15 @@ const router = createBrowserRouter([
 		element: <RootLayout />,
 		children: [
 			{
-				path: "/jobs",
+				path: "/",
 				element: <Jobs />,
+				children: [
+					// <Jobs /> component is added again to ensure that "/jobs" path is supported and that URL with search parameters lead to the specified query
+					{
+						path: "/jobs",
+						element: <Jobs />,
+					},
+				],
 			},
 			{
 				path: "/jobs/search",
