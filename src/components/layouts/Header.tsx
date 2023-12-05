@@ -1,4 +1,6 @@
+// BUILT-IN IMPORTS
 import { Link } from "react-router-dom";
+// INTERNAL IMPORTS
 import ThemeSwitcher from "../UI/ThemeSwitcher";
 
 function Header() {

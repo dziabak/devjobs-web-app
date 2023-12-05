@@ -1,11 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchJobs } from "../../services/api/http";
-
-import JobItem from "../home-page/JobItem";
-
+// BUILT-IN IMPORTS
 import { useSearchParams } from "react-router-dom";
-import LoadingSpinner from "../../components/UI/LoadingSpinner";
+// EXTERNAL IMPORTS
+import { useQuery } from "@tanstack/react-query";
+// INTERNAL IMPORTS
+import { fetchJobs } from "../../services/api/http";
+import JobItem from "../home-page/JobItem";
 import ErrorBlock from "../../components/UI/ErrorBlock";
+import LoadingSpinner from "../../components/UI/LoadingSpinner";
 
 const SearchedJobs = () => {
 	const [searchParams, _setSearchParams] = useSearchParams();

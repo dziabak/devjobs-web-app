@@ -1,6 +1,9 @@
+// BUILT-IN IMPORTS
 import { FormEvent, useRef, useState } from "react";
 import { useNavigate, createSearchParams } from "react-router-dom";
+// EXTERNAL IMPORTS
 import { useMediaQuery } from "react-responsive";
+// INTERNAL IMPORTS
 import JobsFilterModal from "./JobsFilterModal";
 
 function JobsFilter() {

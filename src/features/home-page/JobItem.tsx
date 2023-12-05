@@ -1,8 +1,8 @@
+// BUILT-IN IMPORTS
 import { Link } from "react-router-dom";
-
-import { combineStrings } from "../../utils/combine-strings";
-
+// INTERNAL IMPORTS
 import { JobItemProps } from "../../types/types";
+import { combineStrings } from "../../utils/combine-strings";
 
 function JobItem({
 	company,

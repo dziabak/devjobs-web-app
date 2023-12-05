@@ -1,17 +1,15 @@
+// BUILT-IN IMPORTS
 import { useParams } from "react-router-dom";
-
+// EXTERNAL IMPORTS
 import { useQuery } from "@tanstack/react-query";
-
+// INTERNAL IMPORTS
+import { fetchJobItem } from "../services/api/http";
 import Header from "../components/layouts/Header";
-
 import CompanyHeader from "../features/details-page/CompanyHeader";
 import JobItemDescription from "../features/details-page/JobItemDescription";
 import ApplyNowFooter from "../features/details-page/ApplyNowFooter";
-
-import LoadingSpinner from "../components/UI/LoadingSpinner";
-
-import { fetchJobItem } from "../services/api/http";
 import ErrorBlock from "../components/UI/ErrorBlock";
+import LoadingSpinner from "../components/UI/LoadingSpinner";
 
 function JobItemDetails() {
 	const params = useParams();

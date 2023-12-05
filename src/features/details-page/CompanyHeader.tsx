@@ -1,3 +1,4 @@
+// INTERNAL IMPORTS
 import { CompanyHeaderProps } from "../../types/types";
 
 function CompanyHeader({

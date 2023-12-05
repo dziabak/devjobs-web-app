@@ -1,7 +1,8 @@
+// EXTERNAL IMPORTS
 import { QueryClient } from "@tanstack/react-query";
-import { combineStrings } from "../../utils/combine-strings";
-
+// INTERNAL IMPORTS
 import { JobsProps } from "../../types/types";
+import { combineStrings } from "../../utils/combine-strings";
 
 export const queryClient = new QueryClient();
 

@@ -1,5 +1,6 @@
+// EXTERNAL IMPORTS
 import { useDocumentTitle } from "usehooks-ts";
-
+// INTERNAL IMPORTS
 import { JobItemDescriptionProps } from "../../types/types";
 
 function JobItemDescription({

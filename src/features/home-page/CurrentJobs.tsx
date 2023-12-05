@@ -1,14 +1,13 @@
+// BUILT-IN IMPORTS
 import { useState } from "react";
-
+// EXTERNAL IMPORTS
 import { useQuery } from "@tanstack/react-query";
-
+// INTERNAL IMPORTS
 import { fetchJobs } from "../../services/api/http";
-
 import JobItem from "./JobItem";
-
+import LoadMoreContent from "./LoadMoreContent";
 import LoadingSpinner from "../../components/UI/LoadingSpinner";
 import ErrorBlock from "../../components/UI/ErrorBlock";
-import LoadMoreContent from "./LoadMoreContent";
 
 function CurrentJobs() {
 	const itemsPerPage = 9;
