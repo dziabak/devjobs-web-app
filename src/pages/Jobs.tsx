@@ -1,4 +1,4 @@
-import CurrentJobs from "../components/CurrentJobs";
+import CurrentJobs from "../features/home-page/CurrentJobs";
 
 function Jobs() {
 	return <CurrentJobs />;

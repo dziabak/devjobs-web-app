@@ -1,5 +1,5 @@
-import Header from "../components/UI/Header";
-import JobsFilter from "../components/JobsFilter";
+import Header from "../components/layouts/Header";
+import JobsFilter from "../features/search/JobsFilter";
 
 import { Outlet } from "react-router-dom";
 

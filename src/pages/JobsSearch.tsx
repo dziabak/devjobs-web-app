@@ -1,4 +1,4 @@
-import SearchedJobs from "../components/SearchedJobs";
+import SearchedJobs from "../features/search/SearchedJobs";
 
 const JobsSearch = () => {
 	return <SearchedJobs />;

@@ -1,6 +1,6 @@
 import { useDocumentTitle } from "usehooks-ts";
 
-import { JobItemDescriptionProps } from "../types/types";
+import { JobItemDescriptionProps } from "../../types/types";
 
 function JobItemDescription({
 	position,

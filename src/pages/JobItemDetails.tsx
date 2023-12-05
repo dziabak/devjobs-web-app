@@ -2,15 +2,15 @@ import { useParams } from "react-router-dom";
 
 import { useQuery } from "@tanstack/react-query";
 
-import Header from "../components/UI/Header";
+import Header from "../components/layouts/Header";
 
-import CompanyHeader from "../components/CompanyHeader";
-import JobItemDescription from "../components/JobItemDescription";
-import ApplyNowFooter from "../components/UI/ApplyNowFooter";
+import CompanyHeader from "../features/details-page/CompanyHeader";
+import JobItemDescription from "../features/details-page/JobItemDescription";
+import ApplyNowFooter from "../features/details-page/ApplyNowFooter";
 
 import LoadingSpinner from "../components/UI/LoadingSpinner";
 
-import { fetchJobItem } from "../utils/http";
+import { fetchJobItem } from "../services/api/http";
 import ErrorBlock from "../components/UI/ErrorBlock";
 
 function JobItemDetails() {

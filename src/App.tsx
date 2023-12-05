@@ -1,13 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./utils/http";
+import { queryClient } from "./services/api/http";
 
-import Jobs from "./routes/Jobs";
-import JobsSearch from "./routes/JobsSearch";
-import JobItemDetails from "./routes/JobItemDetails";
+import Jobs from "./pages/Jobs";
+import JobsSearch from "./pages/JobsSearch";
+import JobItemDetails from "./pages/JobItemDetails";
 
-import RootLayout from "./routes/RootLayout";
+import RootLayout from "./pages/RootLayout";
 
 const router = createBrowserRouter([
 	{

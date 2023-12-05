@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import { combineStrings } from "../utils/combine-strings";
+import { combineStrings } from "../../utils/combine-strings";
 
-import { JobItemProps } from "../types/types";
+import { JobItemProps } from "../../types/types";
 
 function JobItem({
 	company,

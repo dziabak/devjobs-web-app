@@ -2,13 +2,13 @@ import { useState } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchJobs } from "../utils/http";
+import { fetchJobs } from "../../services/api/http";
 
 import JobItem from "./JobItem";
 
-import LoadingSpinner from "./UI/LoadingSpinner";
-import ErrorBlock from "./UI/ErrorBlock";
-import LoadMoreContent from "./UI/LoadMoreContent";
+import LoadingSpinner from "../../components/UI/LoadingSpinner";
+import ErrorBlock from "../../components/UI/ErrorBlock";
+import LoadMoreContent from "./LoadMoreContent";
 
 function CurrentJobs() {
 	const itemsPerPage = 9;

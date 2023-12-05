@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ThemeSwitcher from "./ThemeSwitcher";
+import ThemeSwitcher from "../UI/ThemeSwitcher";
 
 function Header() {
 	return (
@@ -9,7 +9,7 @@ function Header() {
 					<Link to="/jobs" reloadDocument>
 						<img src="../../assets/desktop/logo.svg" alt="" />
 					</Link>
-					<ThemeSwitcher/>
+					<ThemeSwitcher />
 				</div>
 			</div>
 		</div>

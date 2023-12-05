@@ -1,4 +1,4 @@
-import { CompanyHeaderProps } from "../types/types";
+import { CompanyHeaderProps } from "../../types/types";
 
 function CompanyHeader({
 	company,

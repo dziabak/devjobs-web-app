@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchJobs } from "../utils/http";
+import { fetchJobs } from "../../services/api/http";
 
-import JobItem from "./JobItem";
+import JobItem from "../home-page/JobItem";
 
 import { useSearchParams } from "react-router-dom";
-import LoadingSpinner from "./UI/LoadingSpinner";
-import ErrorBlock from "./UI/ErrorBlock";
+import LoadingSpinner from "../../components/UI/LoadingSpinner";
+import ErrorBlock from "../../components/UI/ErrorBlock";
 
 const SearchedJobs = () => {
 	const [searchParams, _setSearchParams] = useSearchParams();

@@ -1,7 +1,7 @@
 import { QueryClient } from "@tanstack/react-query";
-import { combineStrings } from "./combine-strings";
+import { combineStrings } from "../../utils/combine-strings";
 
-import { JobsProps } from "../types/types";
+import { JobsProps } from "../../types/types";
 
 export const queryClient = new QueryClient();
 
