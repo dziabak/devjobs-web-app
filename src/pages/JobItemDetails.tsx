@@ -71,6 +71,15 @@ function JobItemDetails() {
 				company={item.company}
 			/>
 		));
+
+		if (data.length === 0) {
+			content = (
+				<ErrorBlock
+					errorHeader="This page does not exist!"
+					errorMessage="Please return to the home page"
+				/>
+			);
+		}
 	}
 
 	return (
@@ -81,7 +90,7 @@ function JobItemDetails() {
 				<div className="container absolute h-0 px-8 -inset-y-10 -inset-x-1/2 sm:px-0 xl:px-64">
 					{header}
 				</div>
-				<div className="container">{content}</div>
+				<div className="container min-h-screen">{content}</div>
 			</section>
 			{footer}
 		</div>
