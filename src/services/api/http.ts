@@ -14,7 +14,7 @@ export async function fetchJobs(): Promise<JobsProps> {
 		throw error;
 	}
 
-	const jobs = await response.json();
+	const jobs: JobsProps = await response.json();
 
 	return jobs;
 }
