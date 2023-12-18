@@ -1,34 +1,14 @@
-// BUILT-IN IMPORTS
-import { useEffect, useState } from "react";
+// EXTERNAL IMPORTS
+import { useDarkMode } from "usehooks-ts";
 
 function ThemeSwitcher() {
-	const [isDarkMode, setIsDarkMode] = useState(false);
+	const { isDarkMode, toggle } = useDarkMode();
 
-	useEffect(() => {
-		if (
-			localStorage.theme === "dark" ||
-			(!("theme" in localStorage) &&
-				window.matchMedia("(prefers-color-scheme: dark)").matches)
-		) {
-			document.documentElement.classList.add("dark");
-			setIsDarkMode(true);
-		} else {
-			document.documentElement.classList.remove("dark");
-			setIsDarkMode(false);
-		}
-	}, [localStorage.theme, isDarkMode]);
-
-	const toggleTheme = () => {
-		if (localStorage.theme === "dark") {
-			localStorage.theme = "light";
-			document.documentElement.classList.remove("dark");
-			setIsDarkMode(false);
-		} else {
-			localStorage.theme = "dark";
-			document.documentElement.classList.add("dark");
-			setIsDarkMode(true);
-		}
-	};
+	if (isDarkMode) {
+		document.documentElement.classList.add("dark");
+	} else {
+		document.documentElement.classList.remove("dark");
+	}
 
 	return (
 		<div className="flex items-center justify-center">
@@ -43,7 +23,7 @@ function ThemeSwitcher() {
 				type="checkbox"
 				id="themeSwitcher"
 				className="border-transparent toggle toggle-neutral toggle-sm bg-c-violet md:toggle-md"
-				onChange={toggleTheme}
+				onChange={toggle}
 				checked={isDarkMode}
 			/>
 
