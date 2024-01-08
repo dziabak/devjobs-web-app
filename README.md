@@ -11,11 +11,9 @@
   - [Continued development](#continued-development)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
-This project is a full-stack web application developed as a portfolio project. It is based on the [Frontend Mentor - Devjobs Web App](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l) challenge, where the goal was to build a jobs board using local data.json for data retrieval. The primary objective was to replicate the provided design while incorporating additional features and maintaining responsiveness for various screen sizes.
+This project is a front-end web application utilizing Firebase for data storing purposes developed as a portfolio project. It is based on the [Frontend Mentor - Devjobs Web App](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l) challenge, where the goal was to build a jobs board using local data.json for data retrieval. The primary objective was to replicate the provided design while incorporating additional features and maintaining responsiveness for various screen sizes.
 
 ### Project features
 
