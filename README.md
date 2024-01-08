@@ -1,93 +1,59 @@
-# Frontend Mentor - Devjobs web app
+# Frontend Mentor - Devjobs Web App
 
-![Design preview for the Devjobs web app coding challenge](./preview.jpg)
+## Table of contents
 
-## Welcome! 👋
+- [Overview](#overview)
+  - [Project features](#project-features)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-Thanks for purchasing this premium Frontend Mentor coding challenge.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects. These premium challenges are perfect portfolio pieces, so please feel free to use what you create in your portfolio to show others.
+## Overview
 
-**To do this challenge, you need a solid understanding of HTML, CSS, and JavaScript.**
+This project is a full-stack web application developed as a portfolio project. It is based on the [Frontend Mentor - Devjobs Web App](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l) challenge, where the goal was to build a jobs board using local data.json for data retrieval. The primary objective was to replicate the provided design while incorporating additional features and maintaining responsiveness for various screen sizes.
 
-## The challenge
+### Project features
 
-Your challenge is to build out this jobs board using a local `data.json` to retrieve the data. Your goal is to try to get your project looking as close to the design as possible.
+- **Filter Functionality**: Users can filter jobs on the index page based on title, location, and job type (full-time position).
+- **Search results with SearchParams**: Search results can be accessed using the custom link with the selected SearchParams.
+- **Data fetched from Firebase**: I've uploaded the data provided by the challenge to my Firebase account in order to have more control over the data and data fetching.
+- **Job Details**: Clicking on a job allows users to view more information and apply for the job.
+- **Responsive Design**: The application provides an optimal layout for different screen sizes, ensuring a seamless user experience.
+- **Interactive Elements**: Hover states have been implemented for all interactive elements throughout the site.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+### Links
 
-We provide the data in a local `data.json` file, so use that to populate the content on the first load. If you want to take it up a notch, feel free to build this as a full-stack application!
+- Live Site URL: [Devjobs on Netlify](https://devjobs-gd.netlify.app/)
 
-Your users should be able to:
+## My process
 
-- View the optimal layout for each page depending on their device's screen size
-- See hover states for all interactive elements throughout the site
-- Be able to filter jobs on the index page by title, location, and whether a job is for a full-time position
-- Be able to click a job from the index page so that they can read more information and apply for the job
-- **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
+### Built with
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+- React
+- React Query
+- TypeScript
+- Tailwind
+- Vite and Netlify (build and deployment)
 
-## Where to find everything
+### What I learned
 
-Your task is to build out the project to the design file provided. We provide both Sketch and Figma versions of the design, so you can choose which tool you prefer to use. You can download the design file on the platform. **Please be sure not to share them with anyone else.** The design download comes with a `README.md` file as well to help you get set up.
+- **TypeScript Mastery**: Navigating the TypeScript landscape in this project was an enlightening journey. Initial hiccups, stemming from inconsistent usage, eventually paved the way for a profound appreciation. TypeScript ceased to be a mere type-checker, evolving into a robust ally, enhancing code clarity, and reshaping my coding mindset.
 
-All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
+- **Navigating API Complexity**: Dealing with APIs, using Fetch and Firebase, presented intricate challenges like pagination and search result storage. Despite less-than-perfect solutions, each obstacle was a lesson in nuanced API interactions. React Router emerged as a key player, offering structured navigation for effective problem-solving.
 
-The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
+- **Third-Party Wisdom Integration**: Recognizing the limitations of my bespoke solutions, the integration of the ts-hooks library emerged as a pivotal decision. This choice emphasized the practicality of leveraging community-backed expertise. Third-party libraries not only refined project functionality but also signaled a shift towards collaborative and efficient development practices.
 
-## Building your project
+### Continued development
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- **Enhancing Search Result Interaction**: Improving my proficiency in working with search results is a priority for continued development. Recognizing that this is a prevalent pattern, refining my current solution can significantly elevate the user experience. Exploring more efficient querying mechanisms, optimizing result display, and incorporating user-friendly features will be pivotal in achieving this goal.
 
-1. Separate the `starter-code` from the rest of this project and rename it to something meaningful for you. Initialize the codebase as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/). **⚠️ IMPORTANT ⚠️: There are already a couple of `.gitignore` files in this project. Please do not remove them or change the content of the files. If you create a brand new project, please use the `.gitignore` files provided in your new codebase. This is to avoid the accidental upload of the design files to GitHub. With these premium challenges, please be sure not to share the design files in your GitHub repo. Thanks!**
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- **Handling Empty Search Inputs**: Addressing the current behavior when users submit empty search parameters is a key area for enhancement. In its current state, the application displays all search results, which might not align with the expected user experience. To mitigate this, future iterations could enforce the requirement of at least one input from the user or implement a more intuitive approach. Options include showcasing a curated set of results based on user data or a service preference, or displaying a limited, paginated query of random results. Striking a balance between user guidance and data presentation will be a focal point in refining this aspect of the application.
 
-## Deploying your project
+## Author
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-**⚠️ IMPORTANT ⚠️: With these premium challenges, please be sure not to upload the design files to GitHub when you're submitting to the platform and sharing it around. If you've created a brand new project, the easiest way to do that is to copy across the `.gitignore` provided in this starter project.**
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-**Have fun building!** 🚀
+- Website - [Grzegorz Dąbrowski](https://gd-portfolio.vercel.app/)
