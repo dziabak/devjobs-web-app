@@ -13,6 +13,8 @@
 
 ## Overview
 
+**Live Site URL: [Devjobs on Netlify](https://devjobs-gd.netlify.app/)**
+
 This project is a front-end web application utilizing Firebase for data storing purposes developed as a portfolio project. It is based on the [Frontend Mentor - Devjobs Web App](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l) challenge, where the goal was to build a jobs board using local data.json for data retrieval. The primary objective was to replicate the provided design while incorporating additional features and maintaining responsiveness for various screen sizes.
 
 ### Project features
@@ -54,4 +56,4 @@ This project is a front-end web application utilizing Firebase for data storing 
 
 ## Author
 
-- Website - [Grzegorz Dąbrowski](https://gd-portfolio.vercel.app/)
+- Website - [My personal portfolio page](https://gd-portfolio.vercel.app/)
