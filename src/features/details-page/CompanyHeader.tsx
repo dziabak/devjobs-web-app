@@ -23,7 +23,7 @@ function CompanyHeader({
 			<div
 				style={{ backgroundColor: logoBackground }}
 				className="absolute flex items-center justify-center w-12 h-12 rounded-2xl -inset-y-6 md:static md:w-[160px] md:h-full md:inset-0 md:rounded-md md:rounded-r-none">
-				<img src={logo} alt="" className="p-2 md:scale-[2] md:p-0" />
+				<img src={logo} alt={`${company} logo icon`} className="p-2 md:scale-[2] md:p-0" />
 			</div>
 			<div className="flex flex-col items-center justify-between w-full h-full mt-2 md:flex-row md:mt-0">
 				<div className="space-y-2 md:ml-12">
