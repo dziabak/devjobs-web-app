@@ -1,5 +1,8 @@
 // EXTERNAL IMPORTS
 import { useDarkMode } from "usehooks-ts";
+// INTERNAL IMPORTS
+import iconSun from "../../assets/icons/icon-sun.svg";
+import iconMoon from "../../assets/icons/icon-moon.svg";
 
 function ThemeSwitcher() {
 	const { isDarkMode, toggle } = useDarkMode();
@@ -14,8 +17,8 @@ function ThemeSwitcher() {
 		<div className="flex items-center justify-center">
 			<label htmlFor="themeSwitcher" className="p-2 px-3 cursor-pointer">
 				<img
-					src="../../assets/desktop/icon-sun.svg"
-					alt=""
+					src={iconSun}
+					alt="Icon of a sun"
 					className="w-[20px] h-[20px] md:w-[24px] md:h-[24px]"
 				/>
 			</label>
@@ -29,8 +32,8 @@ function ThemeSwitcher() {
 
 			<label htmlFor="themeSwitcher" className="p-2 px-3 cursor-pointer">
 				<img
-					src="../../assets/desktop/icon-moon.svg"
-					alt=""
+					src={iconMoon}
+					alt="Icon of a moon"
 					className="w-[16px] h-[16px] md:w-[20px] md:h-[20px]"
 				/>
 			</label>
