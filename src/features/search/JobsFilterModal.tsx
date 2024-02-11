@@ -57,7 +57,7 @@ const JobsFilterModal = ({
 						<input
 							type="text"
 							placeholder="Filter by location..."
-							className="w-full h-12 pl-2 rounded-md dark:bg-c-very-dark-blue dark:text-c-white"
+							className="w-full h-12 pl-2 rounded-md bg-c-white dark:bg-c-very-dark-blue"
 							ref={locationSearchElement}
 						/>
 					</div>
@@ -73,7 +73,7 @@ const JobsFilterModal = ({
 						/>
 						<label
 							htmlFor="contract-modal"
-							className="ml-2 text-lg font-bold cursor-pointer dark:text-white">
+							className="ml-2 text-lg font-bold cursor-pointer text-black dark:text-white">
 							Full Time Only
 						</label>
 					</div>

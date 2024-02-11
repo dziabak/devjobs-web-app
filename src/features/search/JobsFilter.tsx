@@ -74,7 +74,7 @@ function JobsFilter() {
 							<input
 								type="text"
 								placeholder="Filter by title..."
-								className="w-full h-12 pl-2 rounded-md dark:bg-c-very-dark-blue dark:text-c-white"
+								className="w-full h-12 pl-2 rounded-md bg-c-white dark:bg-c-very-dark-blue"
 								ref={positionSearchElement}
 							/>
 						</div>
@@ -94,7 +94,7 @@ function JobsFilter() {
 							<input
 								type="text"
 								placeholder="Filter by location..."
-								className="w-full h-12 pl-2 rounded-md dark:bg-c-very-dark-blue dark:text-c-white"
+								className="w-full h-12 pl-2 rounded-md bg-c-white dark:bg-c-very-dark-blue"
 								ref={locationSearchElement}
 							/>
 						</div>
@@ -109,7 +109,7 @@ function JobsFilter() {
 								/>
 								<label
 									htmlFor="contract"
-									className="hidden ml-2 text-base font-bold cursor-pointer md:block dark:text-white">
+									className="hidden ml-2 text-base font-bold cursor-pointer md:block text-black dark:text-white">
 									Full Time
 								</label>
 							</div>

@@ -22,7 +22,7 @@ function ThemeSwitcher() {
 			<input
 				type="checkbox"
 				id="themeSwitcher"
-				className="border-transparent toggle toggle-neutral toggle-sm bg-c-violet md:toggle-md"
+				className="border-transparent toggle toggle-neutral toggle-sm bg-c-violet hover:bg-c-light-violet [--tglbg:white] dark:[--tglbg:white] md:toggle-md"
 				onChange={toggle}
 				checked={isDarkMode}
 			/>
