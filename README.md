@@ -38,6 +38,7 @@ This project is a front-end web application utilizing Firebase for data storing 
 - React Query
 - TypeScript
 - Tailwind
+- Firebase
 - Vite and Netlify (build and deployment)
 
 ### What I learned
