@@ -19,12 +19,12 @@ This project is a front-end web application utilizing Firebase for data storing 
 
 ### Project features
 
-- **Filter Functionality**: Users can filter jobs on the index page based on title, location, and job type (full-time position).
+- **Filter functionality**: Users can filter jobs on the index page based on title, location, and job type (full-time position).
 - **Search results with SearchParams**: Search results can be accessed using the custom link with the selected SearchParams.
 - **Data fetched from Firebase**: I've uploaded the data provided by the challenge to my Firebase account in order to have more control over the data and data fetching.
-- **Job Details**: Clicking on a job allows users to view more information and apply for the job.
-- **Responsive Design**: The application provides an optimal layout for different screen sizes, ensuring a seamless user experience.
-- **Interactive Elements**: Hover states have been implemented for all interactive elements throughout the site.
+- **Job details**: Clicking on a job allows users to view more information and apply for the job.
+- **Responsive design**: The application provides an optimal layout for different screen sizes, ensuring a seamless user experience.
+- **Interactive elements**: Hover states have been implemented for all interactive elements throughout the site.
 
 ### Links
 
@@ -45,7 +45,7 @@ This project is a front-end web application utilizing Firebase for data storing 
 
 - **TypeScript Mastery**: Navigating the TypeScript landscape in this project was an enlightening journey. Initial hiccups, stemming from inconsistent usage, eventually paved the way for a profound appreciation. TypeScript ceased to be a mere type-checker, evolving into a robust ally, enhancing code clarity, and reshaping my coding mindset.
 
-- **Navigating API Complexity**: Dealing with APIs, using Fetch and Firebase, presented intricate challenges like pagination and search result storage. Despite less-than-perfect solutions, each obstacle was a lesson in nuanced API interactions. React Router emerged as a key player, offering structured navigation for effective problem-solving.
+- **Navigating API Complexity**: Dealing with APIs (using Firebase API endpoint), presented intricate challenges like pagination and search result storage. Despite less-than-perfect solutions, each obstacle was a lesson in nuanced API interactions. React Router emerged as a key player, offering structured navigation for effective problem-solving.
 
 - **Third-Party Wisdom Integration**: Recognizing the limitations of my bespoke solutions, the integration of the ts-hooks library emerged as a pivotal decision. This choice emphasized the practicality of leveraging community-backed expertise. Third-party libraries not only refined project functionality but also signaled a shift towards collaborative and efficient development practices.
 
