@@ -57,7 +57,7 @@ const JobsFilterModal = ({
 						<input
 							type="text"
 							placeholder="Filter by location..."
-							className="w-full h-12 pl-2 rounded-md bg-c-white dark:bg-c-very-dark-blue"
+							className="w-full h-12 pl-2 rounded-md bg-c-white dark:bg-c-very-dark-blue dark:text-c-white"
 							ref={locationSearchElement}
 						/>
 					</div>
